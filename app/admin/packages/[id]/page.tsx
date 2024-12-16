@@ -1,13 +1,16 @@
 import { getPackage } from '@/app/action'
 import { notFound } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+
 import EditPackageForm from '@/components/shared/EditPackageForm '
 
-export default async function PackageDetail({
-  params,
-}: {
-  params: { id: string }
-}) {
+interface PackageDetailProps {
+  params: {
+    id: string
+  }
+}
+
+export default async function PackageDetail({ params }: PackageDetailProps) {
   const id = params.id
   const pkg = await getPackage(id)
 
