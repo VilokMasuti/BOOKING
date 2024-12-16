@@ -145,7 +145,11 @@ export default function BookingForm({
               onSelect={(date: Date | undefined) =>
                 setFormData((prev) => ({ ...prev, date }))
               }
-              disabled={(date) =>
+              disabled={(date: {
+                getDate: () => number
+                getMonth: () => number
+                getFullYear: () => number
+              }) =>
                 !availableDateObjects.some(
                   (availableDate) =>
                     availableDate.getDate() === date.getDate() &&
