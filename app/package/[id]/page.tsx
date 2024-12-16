@@ -21,7 +21,7 @@ export default async function PackageDetail({
               <img
                 src={pkg.image}
                 alt={pkg.title}
-                className="w-full h-64 object-cover rounded-lg mb-4"
+                className="w-full h-64 object-cover  rounded-lg mb-4"
               />
               <p className="text-gray-600 mb-4">{pkg.description}</p>
               <p className="text-2xl font-bold mb-4">${pkg.price} per person</p>
